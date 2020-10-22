@@ -18,6 +18,7 @@ import StarHalfIcon from '@material-ui/icons/StarHalf';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import InfoIcon from '@material-ui/icons/Info';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import Badge from '@material-ui/core/Badge';
 
 function DiamondIcon(props) {
   return (
@@ -90,17 +91,24 @@ export const secondaryListItems = (
       </Typography>
     </ListSubheader>
     <ListItem button>
-      <ListItemIcon>
-        <DiamondIcon />
-      </ListItemIcon>
-      <ListItemText
-        disableTypography
-        primary={
-          <Typography type="body2" style={{ fontSize: '0.87rem' }}>
-            Courses
-          </Typography>
-        }
-      />
+      <Badge
+        color="secondary"
+        className="squareBadge"
+        badgeContent={21}
+        style={{ width: '90%' }}
+      >
+        <ListItemIcon>
+          <DiamondIcon />
+        </ListItemIcon>
+        <ListItemText
+          disableTypography
+          primary={
+            <Typography type="body2" style={{ fontSize: '0.87rem' }}>
+              Courses
+            </Typography>
+          }
+        />
+      </Badge>
     </ListItem>
     <ListItem button>
       <ListItemIcon>

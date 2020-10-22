@@ -85,7 +85,6 @@ export default function ChartBars() {
   return (
     <ResponsiveContainer width="100%" height={500}>
       <BarChart
-        width="100%"
         height={500}
         data={data}
         barCategoryGap={3}
@@ -97,9 +96,8 @@ export default function ChartBars() {
           left: 20,
         }}
       >
-        <CartesianGrid axisLine="false" strokeDasharray="3 3" />
+        <CartesianGrid strokeDasharray="3 3" />
         <YAxis
-          axisLine="false"
           type="number"
           tickFormatter={abbreviateNumber}
           orientation="right"

@@ -146,6 +146,9 @@ const useStyles = makeStyles(theme => ({
     overflow: 'auto',
     flexDirection: 'column',
   },
+  bgBLue: {
+    backgroundColor: '#4185F5',
+  },
   fixedHeight: {
     height: 240,
   },
@@ -177,6 +180,19 @@ const useStyles = makeStyles(theme => ({
     margin: '0',
     fontWeight: '400',
   },
+  '& .MuiBadge-root': {
+    '& .MuiBadge-badge': {
+      borderRadius: '2px',
+      width: 'max-content',
+      padding: '0 200px',
+      backgroundColor: '#FF1E1E',
+      top: '7px',
+      right: '12px',
+      fontSize: '0.65rem',
+      height: '17px',
+      minWidth: '17px',
+    },
+  },
 }));
 
 export default function Dashboard() {
@@ -197,6 +213,11 @@ export default function Dashboard() {
   //   setOpen(false);
   // };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  const fixedHeightPaperBg = clsx(
+    classes.paper,
+    classes.fixedHeight,
+    classes.bgBLue,
+  );
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -309,7 +330,7 @@ export default function Dashboard() {
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={4}>
-              <Paper className={fixedHeightPaper}>
+              <Paper className={fixedHeightPaperBg}>
                 <Deposits />
               </Paper>
             </Grid>

@@ -51,6 +51,7 @@ function abbreviateNumber(value) {
 const useStyles = makeStyles({
   depositContext: {
     flex: 1,
+    color: '#ffffff',
   },
 });
 
@@ -91,12 +92,16 @@ export default function Deposits() {
   return (
     <React.Fragment>
       <Title>Total cases (Worldwide)</Title>
-      <Typography component="p" variant="h4">
+      <Typography
+        component="p"
+        variant="h4"
+        className={classes.depositContext}
+      >
         {abbreviateNumber(totalVictims)}
       </Typography>
-      <Typography color="textSecondary" className={classes.depositContext}>
+      <Typography className={classes.depositContext}>
         {lastUpdate.map(date =>
-          moment(date.covids).format('dddd, MMMM Do YYYY'),
+          moment(date.covids).format('dddd, MMMM D, YYYY'),
         )}
       </Typography>
       <div>
